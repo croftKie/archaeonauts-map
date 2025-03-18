@@ -4,6 +4,7 @@ import { Pane } from "tweakpane";
 import Celestial from "./celestial";
 import { orbit, renderCelestials, rotate } from "./utilities";
 import { planets } from "./data";
+import sunMat from "../static/textures/2k_sun.jpg";
 
 const scene = new THREE.Scene();
 
@@ -16,7 +17,7 @@ scene.background = new THREE.CubeTextureLoader()
 
 const sun = new Celestial(
   new THREE.MeshBasicMaterial({
-    map: textureLoader.load("/textures/2k_sun.jpg"),
+    map: textureLoader.load(sunMat),
   })
 ).getMesh();
 sun.scale.setScalar(7);
